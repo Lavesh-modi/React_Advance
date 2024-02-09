@@ -6,6 +6,9 @@ import LargeListBook from "./Component/book/LonglistBook";
 import { Regularlist } from "./Component/list/Regularlist";
 import { authors } from "./Data/authors";
 import { LargeListItem } from "./Component/author/LargeListItem";
+import { CurrentUserLoader } from "./Component/current-user-loader";
+import { UserInfo } from "./Component/user-info";
+import { UserLoader } from "./Component/user-info-loader";
 
 // const LeftSide = () => {
 //   return (
@@ -41,7 +44,7 @@ function App() {
     //   rightWidth={2}
     // />
 <>
-    <h2>first one </h2>
+    {/* <h2>first one </h2>
 
     <Modal>
       <LargeListBook books={books[0]}/>
@@ -49,7 +52,18 @@ function App() {
     <h3>Second one </h3>
     <Modal>
       <LargeListItem author={authors[0]} />
-    </Modal>
+    </Modal> */}
+
+
+<h2> hEllo app</h2>
+     <CurrentUserLoader>
+      <UserInfo/>
+     </CurrentUserLoader>
+     <h2> Second api</h2>
+
+     <UserLoader userId={"3"}>
+     <UserInfo />
+     </UserLoader>
     </>
   );
 }
