@@ -11,6 +11,11 @@ import { UserInfo } from "./Component/user-info";
 import { UserLoader } from "./Component/user-info-loader";
 import { ResourceLoader } from "./Component/resource-loader";
 import { BookInfo } from "./Component/book-info";
+import { DataLoader } from "./Component/data-loader";
+// import { axios } from "axios";
+// import {axios} from "axios";
+import axios from "axios";
+
 
 // const LeftSide = () => {
 //   return (
@@ -73,6 +78,15 @@ function App() {
      <ResourceLoader resourceUrl={"/books/2"} resourceName={"books"}>
       <BookInfo/>
      </ResourceLoader>
+     <h4>DataLoader </h4>
+     <DataLoader getUser={async() =>{
+      const response = await axios.get("/users/2")
+      return response.data;
+     }}
+     resourceName={"user"}
+     >
+      <UserInfo/>
+     </DataLoader>
     </>
   );
 }
