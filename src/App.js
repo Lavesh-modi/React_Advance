@@ -17,6 +17,7 @@ import { DataLoader } from "./Component/data-loader";
 import axios from "axios";
 import { DataLoaderWithRender } from "./Component/dala-loaderwithrender";
 import { UncontrolledForm } from "./Component/form/uncontrolled-form";
+import { ControlledForm } from "./Component/form/controlled-from";
 
 const fetch = async(url)=>{
   const response = await axios.get(url);
@@ -104,6 +105,9 @@ function App() {
 
 <h3> Working on the form</h3>
      <UncontrolledForm/>
+
+     <h4>Working on the Controlled form</h4>
+     <ControlledForm/>
     </>
   );
 }
