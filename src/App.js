@@ -16,6 +16,7 @@ import { DataLoader } from "./Component/data-loader";
 // import {axios} from "axios";
 import axios from "axios";
 import { DataLoaderWithRender } from "./Component/dala-loaderwithrender";
+import { UncontrolledForm } from "./Component/form/uncontrolled-form";
 
 const fetch = async(url)=>{
   const response = await axios.get(url);
@@ -68,7 +69,7 @@ function App() {
     </Modal> */}
 
 
-<h2> hEllo app</h2>
+{/* <h2> hEllo app</h2>
      <CurrentUserLoader>
       <UserInfo/>
      </CurrentUserLoader>
@@ -98,7 +99,11 @@ function App() {
 
      <DataLoaderWithRender getUser={async()=>fetch("/users/2")
     
-     }  render={(user)=><UserInfo user={user}/>} ></DataLoaderWithRender>
+     }  render={(user)=><UserInfo user={user}/>} ></DataLoaderWithRender> */}
+
+
+<h3> Working on the form</h3>
+     <UncontrolledForm/>
     </>
   );
 }
