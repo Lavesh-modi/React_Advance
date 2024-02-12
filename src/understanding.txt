@@ -7,3 +7,6 @@ data loader : in which the data loader where the api where the call the api in t
 
 
 data loader with render : in which the data where only where pass the component through only the api nothing has been done and has been only the fetch function where work the data which function directly the getuser function
+
+
+Controlled Modal : in which the modal has the outside the button and now we can pass by the prop

@@ -12,12 +12,15 @@ import { UserLoader } from "./Component/user-info-loader";
 import { ResourceLoader } from "./Component/resource-loader";
 import { BookInfo } from "./Component/book-info";
 import { DataLoader } from "./Component/data-loader";
+
 // import { axios } from "axios";
 // import {axios} from "axios";
 import axios from "axios";
 import { DataLoaderWithRender } from "./Component/dala-loaderwithrender";
 import { UncontrolledForm } from "./Component/form/uncontrolled-form";
 import { ControlledForm } from "./Component/form/controlled-from";
+import { useState } from "react";
+import { ControlModal } from "./Component/Modal/Controlled-modal";
 
 const fetch = async(url)=>{
   const response = await axios.get(url);
@@ -51,56 +54,9 @@ const fetch = async(url)=>{
 //   );
 // };
 function App() {
+  const [display,setDisplay]=useState(false)
   return (
-    // <SplitScreen
-    //   Left={LeftSide}
-    //   Right={RightSide}
-    //   leftWidth={2}
-    //   rightWidth={2}
-    // />
-<>
-    {/* <h2>first one </h2>
-
-    <Modal>
-      <LargeListBook books={books[0]}/>
-    </Modal>
-    <h3>Second one </h3>
-    <Modal>
-      <LargeListItem author={authors[0]} />
-    </Modal> */}
-
-
-{/* <h2> hEllo app</h2>
-     <CurrentUserLoader>
-      <UserInfo/>
-     </CurrentUserLoader>
-     <h2> Second api</h2>
-
-     <UserLoader userId={"3"}>
-     <UserInfo />
-     </UserLoader>
-<h3> ResourceLoader</h3>
-     <ResourceLoader resourceUrl={"/users/2"} resourceName={"user"}>
-      <UserInfo/>
-     </ResourceLoader>
-     <ResourceLoader resourceUrl={"/books/2"} resourceName={"books"}>
-      <BookInfo/>
-     </ResourceLoader>
-     <h4>DataLoader </h4>
-     <DataLoader getUser={async() =>{
-      const response = await axios.get("/users/2")
-      return response.data;
-     }}
-     resourceName={"user"}
-     >
-      
-     </DataLoader>
-
-     <h4>DataLoaderWithRender</h4>
-
-     <DataLoaderWithRender getUser={async()=>fetch("/users/2")
-    
-     }  render={(user)=><UserInfo user={user}/>} ></DataLoaderWithRender> */}
+  <>
 
 
 <h3> Working on the form</h3>
@@ -108,6 +64,19 @@ function App() {
 
      <h4>Working on the Controlled form</h4>
      <ControlledForm/>
+     <h5>Controlled Mosal</h5>
+     <ControlModal display={display} close={()=>setDisplay(false)} >
+
+      <p>I am in the Modal</p>
+     </ControlModal>
+     <button onClick={()=>{
+      console.log(display,"<<<<<<<<<<")
+         setDisplay(!display);
+      }}> {display ? "Hide Modal": "Display Modal"}</button>
+
+
+
+     
     </>
   );
 }
