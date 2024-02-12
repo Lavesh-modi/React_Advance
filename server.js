@@ -59,11 +59,11 @@ let books = [
 app.get("/current-user", (req, res) => res.json(currentUser));
 
 app.get("/users/:id", (req, res) => {
-  console.log("id api is calling")
+  // console.log("id api is calling")
   const { id } = req.params;
   // console.log(id̥);
-  console.log("🚀 ~ app.get ~ id̥:", id)
-  console.log((users.find((user) => {  console.log(user.id+"user id"+id); return user.id === id ;})),"user")
+  // console.log("🚀 ~ app.get ~ id̥:", id)
+  // console.log((users.find((user) => {  console.log(user.id+"user id"+id); return user.id === id ;})),"user")
   res.json(users.find((user) => user.id === id));
   
 });
@@ -83,8 +83,15 @@ app.post("/users/:id", (req, res) => {
 app.get("/books", (req, res) => res.json(books));
 
 app.get("/books/:id", (req, res) => {
+  console.log(req.params," id in the books")
   const { id } = req.params;
-  res.json(books.find((book) => book.id === id));
+  
+  const data = books.find((book) => book.id === id)
+  if(data){
+  return res.json(data);
+
+  }
+  return res.json({message:"No Book Found"})
 });
 
 let SERVER_PORT = 9090;

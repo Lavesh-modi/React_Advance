@@ -1,0 +1,3 @@
+1 resource loader : in which i used the container for the api has the only the url, name , children in which the url pass like prop from tbe app file to the the component url={"urlpath"}
+in which the name of the user so the api we can pass for getting the user data from it 
+2 No hasel in the repeat the code

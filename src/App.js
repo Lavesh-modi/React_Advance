@@ -9,6 +9,8 @@ import { LargeListItem } from "./Component/author/LargeListItem";
 import { CurrentUserLoader } from "./Component/current-user-loader";
 import { UserInfo } from "./Component/user-info";
 import { UserLoader } from "./Component/user-info-loader";
+import { ResourceLoader } from "./Component/resource-loader";
+import { BookInfo } from "./Component/book-info";
 
 // const LeftSide = () => {
 //   return (
@@ -64,6 +66,13 @@ function App() {
      <UserLoader userId={"3"}>
      <UserInfo />
      </UserLoader>
+<h3> ResourceLoader</h3>
+     <ResourceLoader resourceUrl={"/users/2"} resourceName={"user"}>
+      <UserInfo/>
+     </ResourceLoader>
+     <ResourceLoader resourceUrl={"/books/2"} resourceName={"books"}>
+      <BookInfo/>
+     </ResourceLoader>
     </>
   );
 }
