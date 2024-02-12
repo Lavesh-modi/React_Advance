@@ -15,6 +15,12 @@ import { DataLoader } from "./Component/data-loader";
 // import { axios } from "axios";
 // import {axios} from "axios";
 import axios from "axios";
+import { DataLoaderWithRender } from "./Component/dala-loaderwithrender";
+
+const fetch = async(url)=>{
+  const response = await axios.get(url);
+  return response.data
+}
 
 
 // const LeftSide = () => {
@@ -85,8 +91,14 @@ function App() {
      }}
      resourceName={"user"}
      >
-      <UserInfo/>
+      
      </DataLoader>
+
+     <h4>DataLoaderWithRender</h4>
+
+     <DataLoaderWithRender getUser={async()=>fetch("/users/2")
+    
+     }  render={(user)=><UserInfo user={user}/>} ></DataLoaderWithRender>
     </>
   );
 }
