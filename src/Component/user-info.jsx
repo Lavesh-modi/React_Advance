@@ -1,4 +1,8 @@
-export const UserInfo = ({ user }) => {
+import { useCurrentUser } from "./custom-hook/current-user.hook";
+import { useResourceUser } from "./custom-hook/resource-hook";
+
+export const UserInfo = () => {
+  const user = useResourceUser("users/3");
   const { name, age, country, books } = user || {};
   return user ? (
     <>
