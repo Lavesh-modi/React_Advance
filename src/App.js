@@ -1,6 +1,8 @@
 import "./App.css";
 import { useState, useRef } from "react";
 import { Input } from "./Component/hooks/inputBox";
+import { Counter } from "./Component/hooks/counter";
+import { Shirt } from "./Component/hooks/keyChange";
 function App() {
   // const [display, setDisplay] = useState(false);
   const inputRef = useRef();
@@ -18,6 +20,10 @@ function App() {
         <Input ref={inputRef} />
         <button type="submit">submit</button>
       </form>
+      <h3> Counter</h3>
+      {/* <Counter />
+       */}
+       <Shirt/>
     </>
   );
 }
