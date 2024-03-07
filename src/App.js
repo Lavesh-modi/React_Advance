@@ -1,31 +1,23 @@
 import "./App.css";
-import { UserInfo } from "./Component/user-info";
-import axios from "axios";
-import { useState } from "react";
-import { logProps } from "./Component/hoc/log-prop";
-import {
-  Button,
-  GreenButton,
-  RedButton,
-} from "./Component/Functional/composition";
-import { CrimsonButton } from "./Component/Functional/partial";
-
-// const UserInfoWrapper = logProps(UserInfo);
-
+import { useState, useRef } from "react";
+import { Input } from "./Component/hooks/inputBox";
 function App() {
-  const [display, setDisplay] = useState(false);
+  // const [display, setDisplay] = useState(false);
+  const inputRef = useRef();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // console.log(e, "Form submitted!");
+
+    console.log(inputRef.current.value, "inputRef");
+  };
+
   return (
     <>
-      {/* <UserInfoWrapper test={"hii"} best={"i am best"} /> */}
-      <h2>User info </h2>
-      {/* <UserInfo /> */}
-      <h3>Functional </h3>
-      {/* <RedButton text={"text"} /> */}
-      <Button text={"warming"}></Button>
-      <RedButton text={"danger"}></RedButton>
-      <GreenButton text={"Can go"} onclick={()=>console.log("button click")}></GreenButton>
-      <br/><br/>
-      <CrimsonButton text={"i am good"}/>
+      <form onSubmit={handleSubmit}>
+        <Input ref={inputRef} />
+        <button type="submit">submit</button>
+      </form>
     </>
   );
 }
