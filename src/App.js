@@ -8,8 +8,9 @@ import {
   GreenButton,
   RedButton,
 } from "./Component/Functional/composition";
+import { CrimsonButton } from "./Component/Functional/partial";
 
-const UserInfoWrapper = logProps(UserInfo);
+// const UserInfoWrapper = logProps(UserInfo);
 
 function App() {
   const [display, setDisplay] = useState(false);
@@ -22,7 +23,9 @@ function App() {
       {/* <RedButton text={"text"} /> */}
       <Button text={"warming"}></Button>
       <RedButton text={"danger"}></RedButton>
-      <GreenButton text={"Can go"}></GreenButton>
+      <GreenButton text={"Can go"} onclick={()=>console.log("button click")}></GreenButton>
+      <br/><br/>
+      <CrimsonButton text={"i am good"}/>
     </>
   );
 }

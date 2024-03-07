@@ -1,4 +1,4 @@
-export const Button = ({text,color,size,...props})=>{
+export const Button = ({text,color,size,onclick,...props})=>{
     console.log("in button")
     return(
         <button 
@@ -7,8 +7,8 @@ export const Button = ({text,color,size,...props})=>{
             color:color
         }}
 
-        
-        >{text}</button>
+        onClick={onclick}
+        >  {text}</button>
     )
 };
 
